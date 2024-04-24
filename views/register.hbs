@@ -165,7 +165,17 @@
 					<input type="password" id="password" name="password" required>
 					<i class="fas fa-eye-slash password-toggle" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; color: #999;" onclick="togglePassword()"></i>
 				</div>
-			</div>
+			</div>		
+	{{#if message}}
+    {{#if success}}
+    <h4 class="alert alert-success mt-2">{{message}}</h4>
+    {{else}}
+        <h4 class="alert alert-danger mt-2">{{message}}</h4>
+    {{/if}}
+{{/if}}
+
+
+
 			<a href="#" class="forgot-password">Esqueceu a senha?</a>
 			<button type="submit" class="btn" >Registre-se</button>
 		</form>
@@ -187,9 +197,6 @@
 			<p>Já possui conta? <a href="/views/login">Login</a></p>
 		</div>
 	</div>
-	{{# if message}}
-		<h4 class="alert alert-danger mt-4">{{message}}</h4>
-	{{/if}}
 	<script>
 		function clearUsername() {
       document.getElementById('username').value = '';
