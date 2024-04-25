@@ -5,7 +5,7 @@ const db = require('../db/db.js');
 const appF= require("../app.js")
 const session = require('express-session');
 const router = express.Router();
-
+const passport = require('passport');
 
 
 
@@ -113,13 +113,29 @@ router.post("/auth/login", (req, res) => {
             
             req.session.user = user; // Armazena o usuário na sessão
             res.redirect('/private');
+            return res.render('/private', { message: "Credenciais válidas", success: true });
         } else {
-            return res.render('login', { message: "Credenciais inválidas", success: false });
+            return res.render('/private', { message: "Credenciais inválidas", success: false });
         }
     });
 });
 
+
+
+//////
+router.post("/auth/login", passport.authenticate('local', {
+    successRedirect: '/private', // Redireciona em caso de sucesso
+    failureRedirect: '/views/login', // Redireciona em caso de falha
+    failureFlash: true // Habilita mensagens flash para erros de autenticação
+}));
+
+
+
+/////////////
 module.exports = router;
+
+
+
 
 
 

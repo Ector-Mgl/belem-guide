@@ -4,6 +4,7 @@ const rout= require("./routes/routes.js")
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+
 /// CONFIG
 const app = express();
 app.use('/assets', express.static(__dirname +'/assets' ))
