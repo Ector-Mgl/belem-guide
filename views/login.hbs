@@ -241,11 +241,11 @@
 
         <div>
             <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="i_points.html">Pontos de Interesse</a></li>
-                <li><a href="t_points.html">Pontos Turísticos</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="views/login">Sign In <i class="bi bi-person-fill"></i></a></li>
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="/views/interest">Pontos de Interesse</a></li>
+                <li><a href="/views/pontos-turistico">Pontos Turísticos</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="/views/login">Sign In <i class="bi bi-person-fill"></i></a></li>
 
             </ul>
         </div>
@@ -268,9 +268,13 @@
                     <input type="password" id="password" name="password" required>
                     <i class="fas fa-eye-slash password-toggle" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; color: #999;" onclick="togglePassword()"></i>
                 </div>
-				{{#if message}}
-				<h4 class="alert alert-danger mt-4">{{message}}</h4>
-				{{/if}}
+					{{#if message}}
+    {{#if success}}
+    <h4 class="alert alert-success mt-2">{{message}}</h4>
+    {{else}}
+        <h4 class="alert alert-danger mt-2">{{message}}</h4>
+    {{/if}}
+{{/if}}
             </div>
             <a href="#" class="forgot-password">Esqueceu a senha?</a>
             <button type="submit" class="btn">Login</button>
@@ -280,13 +284,13 @@
         </div>
         <div class="social-buttons">
             <button class="btn-google">
-                <img src="assets/icons8-google-100.png" alt="Google Logo">
+                <img src="/assets/icons8-google-100.png" alt="Google Logo">
             </button>
             <button class="btn-apple">
-                <img src="assets/icons8-apple-100.png" alt="Apple Logo">
+                <img src="/assets/icons8-apple-100.png" alt="Apple Logo">
             </button>
             <button class="btn-facebook">
-                <img src="assets/icons8-facebook-100.png" alt="Facebook Logo">
+                <img src="/assets/icons8-facebook-100.png" alt="Facebook Logo">
             </button>
         </div>
         <div class="register-link">

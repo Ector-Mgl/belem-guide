@@ -19,6 +19,12 @@ router.get("/views/register", (req, res) => {
 router.get("/views/login", (req, res) => {
     res.render("login");
 });
+router.get("/views/interest", (req, res) => {
+    res.render("ipoint");
+});
+router.get("/views/pontos-turistico", (req, res) => {
+    res.render("pturis");
+});
 
 ////////////////////////////////////////////////////////
 router.post("/auth/register", (req, res) => {
@@ -75,11 +81,11 @@ router.post("/auth/login", (req, res) => {
     db.query('SELECT * FROM users WHERE username = ?', [username], async (error, results) => {
         if (error) {
             console.log(error);
-            res.status(500).json({ message: 'Erro ao verificar usuário' });
+            res.status(500).json({ message: 'Erro ao verificar usuário', success: false });
         }
 
         if (results.length === 0) {
-            return res.render('login', { message: "Usuário não encontrado" });
+            return res.render('login', { message: "Usuário não encontrado", success: false  });
         }
 
         const user = results[0];
@@ -89,7 +95,7 @@ router.post("/auth/login", (req, res) => {
         if (passwordMatch) {
             res.redirect('/');
         } else {
-            return res.render('login', { message: "Credenciais inválidas" });
+            return res.render('login', { message: "Credenciais inválidas", success: false });
         }
     });
 });

@@ -1,50 +1,110 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Spartan", sans-serif;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Global Styles */
-  
-  h1 {
-    font-size: 50px;
-    line-height: 64px;
-    color: #222;
-  }
-  
-  h2 {
-    font-size: 46px;
-    line-height: 54px;
-    color: #222;
-  }
-  
-  h4 {
-    font-size: 20px;
-    color: #222;
-  }
-  
-  h6 {
-    font-weight: 700;
-    font-size: 12px;
-  }
-  
-  p {
-    font-size: 16px;
-    color: #465b52;
-    margin: 15px 0 20px 0;
-  }
 
-body{
-    background: #eaeaea;
-    overflow: hidden;
-    width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+  display: block; /* Ensure display is set for visibility */
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+  display: block; 
+}
+
+body {
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  margin: 0; 
+  padding: 0; 
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+body::before {
+  content: ''; /* Adiciona um conteúdo vazio ao pseudo-elemento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/bgEstação.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Aplica o efeito de desfoque apenas no pseudo-elemento */
+  z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do body */
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+.section-p2 {
+  padding: 40px 1600px;
+}
+#product1 h2{
+  text-align: left ;
+}
+#product1 p{
+  text-align: left;
+  display: flex;
+  justify-content:left;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  width: 20%;
+  min-width: 250px;
+  padding: 12px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(255, 255, 255, 0.342);
+  margin: 15px 0;
+  transition: 0.2 ease;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.164);
+}
+
+#main-text{
+  background-color: #ffffff3a;
+  border-radius: 10px;
+}
+
 
 #header{
   display: flex;
@@ -96,34 +156,14 @@ body{
     bottom: -4px;
     left: 20px;
   }
-  
-  #hero1{
-      height: 90vh;
-      width: 100%;
-      background-size: cover;
-      background-position: top 25% right 0;
-      padding: 0 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    
-    #hero h4{
-        padding-bottom: 15px;
-    }
-    
-    #hero h1{
-        color: #088178;
-    }
-    
+
     #hero{
       background-image: url(https://img.freepik.com/vetores-gratis/vetor-de-fundo-abstrato-de-meio-tom_1055-11292.jpg?w=1380&t=st=1713836597~exp=1713837197~hmac=5e38d12caa484d9eed1c50a51d8251f3cca2447894440826f3b2732538aa5f2b);
       height: 90vh;
       width: 100%;
       opacity: 0.05; 
     }
-/* i think the container its too small, how can i increase the container? */
+
 .container{
     position: absolute;
     top: 50%;
@@ -134,20 +174,20 @@ body{
     background: #f5f5f5;
     box-shadow: 0 30px 50px #dbdbdb;
 }
-/* how can i increase the item? */
+
 .container .slide .item{
-    width: 200px;
-    height: 300px;
+    width: 170px;
+    height: 270px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
     border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
+    box-shadow: 0 30px 50px #111111;
     background-position: 50% 50%;
     background-size: cover;
     display: inline-block;
     transition: 0.5s;
-    box-shadow: 0 30px 50px #69696965;}
+    box-shadow: 0 30px 50px #69696941;}
 
 .slide .item:nth-child(1),
 .slide .item:nth-child(2){
@@ -161,13 +201,13 @@ body{
 
 
 .slide .item:nth-child(3){
-    left: 50%;
+    left: 43%;
 }
 .slide .item:nth-child(4){
-    left: calc(50% + 220px);
+    left: calc(43% + 220px);
 }
 .slide .item:nth-child(5){
-    left: calc(50% + 440px);
+    left: calc(43% + 440px);
 }
 
 /* here n = 0, 1, 2, 3,... */
@@ -175,8 +215,6 @@ body{
     left: calc(50% + 660px);
     opacity: 0;
 }
-
-
 
 .item .content{
     position: absolute;
@@ -297,3 +335,33 @@ body{
     color: rgba(255, 0, 0, 0.685);
   }
   
+  .flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.267);
+    background-color: rgba(255, 255, 255, 0.493);
+  }
+
+  #product2{
+  text-align: left;
+  justify-content:left;
+  width: 20%;
+  min-width: 250px;
+  padding-right: 40px;
+  padding-top: 100px;
+  cursor: pointer;
+  transition: 0.2 ease;
+  position:relative;
+}
+
+.pd {
+  padding: 10px;
+}

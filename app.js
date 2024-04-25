@@ -3,6 +3,9 @@ const path = require('path');
 const rout= require("./routes/routes.js")
 const app = express();
 
+app.use('/assets', express.static(__dirname +'/assets' ))
+app.use("/css", express.static(path.join(__dirname, './css/')));
+app.use('/js', express.static(path.join(__dirname, './js/')))
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
