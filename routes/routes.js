@@ -3,7 +3,10 @@ const mysql = require('mysql');
 const bcrypt = require('bcryptjs');
 const db = require('../db/db.js');
 const appF= require("../app.js")
+const session = require('express-session');
 const router = express.Router();
+
+
 
 
 
@@ -11,7 +14,19 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.render("index");
 });
+////
 
+router.get('/private', (req, res) => {
+    if (req.isAuthenticated()) { // Verifica se o usuário está autenticado
+        res.render('private'); // Renderiza a página privada
+    } else {
+        res.redirect('/views/login'); // Redireciona para a página de login se não estiver autenticado
+    }
+});
+
+
+
+///
 router.get("/views/register", (req, res) => {
     res.render("register");
 });
@@ -25,7 +40,9 @@ router.get("/views/interest", (req, res) => {
 router.get("/views/pontos-turistico", (req, res) => {
     res.render("pturis");
 });
-
+router.get("/views/about", (req,res) =>{
+    res.render("about")
+})
 ////////////////////////////////////////////////////////
 router.post("/auth/register", (req, res) => {
     
@@ -90,10 +107,12 @@ router.post("/auth/login", (req, res) => {
 
         const user = results[0];
 
-        const passwordMatch = await bcrypt.compare(password, user.senha);
+        const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (passwordMatch) {
-            res.redirect('/');
+            
+            req.session.user = user; // Armazena o usuário na sessão
+            res.redirect('/private');
         } else {
             return res.render('login', { message: "Credenciais inválidas", success: false });
         }

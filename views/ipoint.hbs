@@ -24,15 +24,13 @@
             </ul>
         </div>
 
-    </section>
-
-    <section id="product1" class="section-p1">
+     <section id="product1" class="section-p1">
         <h2> Belém's SuperMarkets</h2>
         <p>Most Popular Supermarkets in Belém</p>
         <div class="pro-container">
             <div class="pro">
                 <img src="/assets/lider-super_00539426_0_-3_cropped.webp" alt="">
-                <div class="des" >
+                <div class="des">
                     <h4 id="myh4">Supermercado Líder</h4><br>
                     <h7>Endereço: Av. Senador Lemos, 1801 - Umarizal, Belém - PA, 66055-00
                     </h7><br>
@@ -448,6 +446,129 @@
             </div>
         </div>
     </section>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="/assets/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> somewhere in Belém of Pará </p>
+            <p><strong>Phone:</strong> +55 (91)98551-5933</p>
+            <p><strong>E-mail:</strong> mazzahudson05@outlook.com</p>
+            
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Police</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Account</h4>
+            <a href="login.html"> Sign In</a>
+            <a href="t_points.html">View tourists points</a>
+            <a href="i_points.html">View interesting points</a>
+            <a href="#">Help</a>
+        </div>
+            <div class="copyright">
+                <p>@ 2024, Belem-Guide</p>
+            </div>
+        </div>
+    </footer>
+        <div id="info-container">
+        </div>
+        <div id="map">
+
+        </div>
+</section>
+<script>
+
+    function showInfo(event) {
+        var img = event.currentTarget.querySelector('img').getAttribute('src');
+        var title = event.currentTarget.querySelector('h4').innerText;
+        var address = event.currentTarget.querySelector('h7:nth-of-type(1)').innerText;
+        var hours = event.currentTarget.querySelector('h7:nth-of-type(2)').innerText;
+        var contact = event.currentTarget.querySelector('h7:nth-of-type(3)').innerText;
+    
+        document.getElementById('info-container').innerHTML = `
+            <h2>${title}</h2>
+            <img src="${img}">
+            <p><strong> ${address}</p>
+            <p><strong>Horário de Funcionamento:</strong> ${hours}</p>
+            <p><strong>Contato:</strong> ${contact}</p>
+            <button id="rota" data-address="${address}">Traçar Rota</button>
+        `;
+        document.getElementById('info-container').style.right = '0';
+        document.getElementById('content').classList.add('content-left');
+    
+        var proDivs = document.querySelectorAll('.pro-container');
+        proDivs.forEach(function(div) {
+            div.style.width = 'calc(100% - 200px)';
+            document.getElementById('content').style.left = '-30px';
+        });
+    
+    };
+
+    
+    var proDivs = document.querySelectorAll('.pro');
+    
+    proDivs.forEach(function(div) {
+        div.addEventListener('click', showInfo);
+    });
+    document.getElementById('info-container').addEventListener('click', function(event) {
+        if (event.target && event.target.id === 'rota') {
+            document.getElementById('map').style.display = 'block';
+            var address = event.target.getAttribute('data-address');
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': address }, function(results, status) {
+                if (status == 'OK') {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 12,
+                        center: results[0].geometry.location
+                    });
+
+                    var directionsService = new google.maps.DirectionsService();
+                    var directionsDisplay = new google.maps.DirectionsRenderer({
+                        map: map
+                    });
+
+                    var request = {
+                        origin: "Unama - Alcindo Cacela, Belém, Brasil",
+                        destination: address,
+                        travelMode: 'DRIVING'
+                    };
+
+                    directionsService.route(request, function(result, status) {
+                        if (status == 'OK') {
+                            directionsDisplay.setDirections(result);
+                        } else {
+                            window.alert('Não foi possível calcular a rota: ' + status);
+                        }
+                    });
+                    
+                } else {
+                    window.alert('Endereço não encontrado: ' + status);
+                }
+            });
+            
+        }
+        
+    });
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmemBTMviCF-LjvynRkUxSoTd5SE1joEA&callback"></script>
+    
 
 </body>
 </html>

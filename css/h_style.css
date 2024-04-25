@@ -41,7 +41,6 @@ p {
 }
 body {
   width: 100%;
-  background-image: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-size: cover;
   background-position: center;
   margin: 0; 
@@ -130,96 +129,46 @@ body::before {
   bottom: -4px;
   left: 20px;
 }
-
-#product1 {
-    text-align: center;
-  }
-  
-  #product1 .pro-container{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    flex-wrap: wrap;
-  }
-  
-  #product1 .pro{
-    width: 23%;
-    min-width: 250px;
-    padding: 10px 12px;
-    border: 1px solid #cce7d0;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.034);
-    margin: 15px 0;
-    transition: 0.2 ease;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.562);
-
-  }
-  #product1 .pro:hover{
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
-  
-  }
-  #product1 .pro img{
+#hero{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5fbd0fcb06ee170e1048dfea/1701324028323-WRBRHG5VFYMCG1C80XRD/image-asset.jpeg.png");
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
     width: 100%;
-    border-radius: 20px;
-  }
-  
-  #product1 .pro .des{
-    text-align: start;
-    padding: 10px 0;
-  }
-  
-  #product1 .pro .des span{
-    color: #606063;
-    font-size: 12px;
-  }
-  
-  #product1 .pro .des h5 {
-    padding-top: 7px;
-    color: #1a1a1a;
-    font-size: 14px;
-  }
-  
-  
-  #product1 .pro .des h4{
-    padding-top: 7px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #000706;
-  } 
-
-  #product1 .pro .des h7{
-    padding-top: 7px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #000706a1;
-    background-color: #0caaa011;
-  } 
-  
-  #product1 .pro .bi-plus{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    background-color: #e8f6ea;
-    font-weight: 500;
-    color: #088178;
-    border: 1px solid #cce7d0;
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
   }
   
-  #product1 .pro .bi-plus:hover{
-    background-color: #d3f5d8e0;
-    color: #0fd31faf;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.123);
+  #hero h4, #hero h2, #hero p{
+    padding-bottom: 15px;
+    color: rgb(255, 255, 255);
+    background-color: #05504b;
   }
   
+  #hero h1{
+    color: #088179d0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  #hero button{
+    background-color: rgba(255, 255, 255, 0.815);
+    border-radius: 20px;
+    color: #088178;
+    border: 1px;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+
+  }
+
+    
   footer{
     display: flex;
     flex-wrap: wrap;
@@ -285,68 +234,4 @@ body::before {
     text-align: center;
     
   }
-
-  #info-container {
-    position: fixed;
-    top: 0;
-    right: -1000px;
-    width: 500px;
-    height: 100%;
-    background-color: #f4f4f4;
-    transition: right 0.5s ease;
-    padding-top: 4%;
-    padding-left: 0.6%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  #content {
-    transition: margin-left 0.5s;
-  }
   
-  .content-left {
-    position: relative;
-    right: 200px;
-    max-width: calc(100% - 240px);
-  }
-  
-  #info-container img {
-    max-width: 100%;
-    height: 50%;
-  }
-  
-  #map {
-    width: 470px;
-    height: 10%;
-    right: -15%;
-    top: 10px;
-    position: absolute;
-    display: none;
-}
-  
-  
-  #close {
-    position: absolute;
-    top:-15px;
-    right: 15px;
-    background: #fff;
-    height: 10%;
-    width: 50%;
-    border-radius: 50%;
-    box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
-    cursor: pointer;
-  }
-  
-  #rota {
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #rota:hover {
-    background-color: #1264c2;
-  }
