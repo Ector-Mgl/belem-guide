@@ -3,13 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Minha Conta</title>
+    <style>
+ body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+    background-image: url('/assets/blurred_back.png');
+    }
+#header{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #cfd3df;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 50px;
+}
+
+#navbar{
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+#navbar li{
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.active,{
+    color: #088178;
+    font-size: 17px;
+  }
+  
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+  }
+  #navbar li form button{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+    background-color: #cfd3df;
+    border: 0;
+  }
+  #navbar li form button:hover{
+    color: #088178;
+    font-size: 17px;
+  }
+    </style>
 </head>
 <body>
-    <a href="">Aqui e um teste</a>
-    <a href="">Aqui e um teste</a><br>
-    <a href="">Aqui e um teste</a><br>
-    <a href="">Aqui e um teste</a><br>
-    <a href=""></a>
+    <section id="header">
+        <a href="#"><img class="logo"></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="/views/interest">Pontos de Interesse</a></li>
+                <li><a href="/views/pontos-turistico">Pontos Turísticos</a></li>
+                <li><a href="/views/about">About Us</a></li>
+                <li><form action="/logout" method="POST">
+        <button type="submit">Sign out</button>
+    </form></li>
+
+            </ul>
+        </div>
+
+    </section>
+    
+    <main class="page" style="min-height: 100%;">
+        <section class="clean-block about-us">
+            
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col text-center">
+                    <h2 class="text-info">Minha Conta</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col-sm-6 col-lg-4" style="padding-right: 0px;padding-left: 0px;">
+                    <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg">
+                        <div class="card-body info">
+                            <div class="row" style="margin-top: -24px;">
+                                <div class="col-md-12" style="margin-top: 22px;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels"><strong>Usuario</strong></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels">{{username}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels"><strong>Senha</strong></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels">************</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-</html\>
+</html>

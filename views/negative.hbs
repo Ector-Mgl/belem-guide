@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    background-image: url('/assets/blurred_back.png');
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #cfd3df;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 50px;
+}
+
+#navbar{
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+#navbar li{
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.active{
+    color: #088178;
+    font-size: 17px;
+  }
+  
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+  }
+  h1, h2{
+    color: white;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="/views/interest">Pontos de Interesse</a></li>
+                <li><a href="/views/pontos-turistico">Pontos Turísticos</a></li>
+                <li><a href="/views/about">About Us</a></li>
+                <li><a href="/views/login">Sign In <i class="bi bi-person-fill"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <h1>Parece que você não tem permissão para acessar essa página</h1>
+    <h2>Faça o login e tente novamente!</h2>
+</body>
+</html>

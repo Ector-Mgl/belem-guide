@@ -4,9 +4,10 @@ const rout= require("./routes/routes.js")
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-
+const cookieParser = require('cookie-parser')
 /// CONFIG
 const app = express();
+app.use(cookieParser());
 app.use('/assets', express.static(__dirname +'/assets' ))
 app.use("/css", express.static(path.join(__dirname, './css/')));
 app.use('/js', express.static(path.join(__dirname, './js/')))
@@ -16,49 +17,12 @@ app.set('view engine', 'hbs');
 const publicDir = path.join(__dirname, './public');
 app.use(express.static(publicDir));
 ///
-
-
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+////
 const LocalStrategy = require('passport-local').Strategy;
 
 
-
-
-
-passport.use(new LocalStrategy(async (username, password, done) => {
-    db.query('SELECT * FROM users WHERE username = ?', [username], async (error, results) => {
-        if (error) {
-            return done(error);
-        }
-
-        if (results.length === 0) {
-            return done(null, false, { message: 'Usuário não encontrado' });
-        }
-
-        const user = results[0];
-        const passwordMatch = await bcrypt.compare(password, user.password);
-
-        if (!passwordMatch) {
-            return done(null, false, { message: 'Credenciais inválidas' });
-        }
-
-        return done(null, user);
-    });
-}));
-
-passport.serializeUser((user, done) => {
-    done(null, user.id); // Serializa o usuário
-});
-
-passport.deserializeUser((id, done) => {
-    db.query('SELECT * FROM users WHERE id = ?', [id], (error, results) => {
-        if (error) {
-            return done(error);
-        }
-
-        const user = results[0];
-        done(null, user); // Desserializa o usuário
-    });
-});
 // Configuração das sessões e flash messages
 app.use(session({
     secret: 'nodeusado',
@@ -72,13 +36,63 @@ app.use(flash());
 
 
 
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+  
+const secretKey = 'fen*$fne28$b2'
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(
+  (username, password, done) => {
+    db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+      if (err) return done(err);
+      if (results.length === 0) {
+        return done(null, false, { message: 'Usuário não encontrado' });
+      }
+
+      const user = results[0];
+
+      bcrypt.compare(password, user.password, (err, isMatch) => {
+        if (err) return done(err);
+        if (isMatch) {
+          return done(null, user);
+        } else {
+          return done(null, false, { message: 'Senha incorreta' });
+        }
+      });
+    });
+  }
+));
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  db.query('SELECT * FROM users WHERE id = ?', [id], (err, results) => {
+    if (err) return done(err);
+    done(null, results[0]);
+  });
+});
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
 
 
 
 app.use('/', rout);
-
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
     console.log(`Server started at port ${PORT}`);
 });
