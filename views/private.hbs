@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="https://cdn.outback.com.br/wp-data/wp-content/themes/outback_2022/assets/images/outback-logo.png">
+    <title>Minha Conta</title>
+    <link rel="stylesheet" href="/css/i_style.css">
+    <style>
+ body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+    background-image: url('/assets/notFound.png');
+    }
+    .labels{
+        color: black;
+    }
+  #navbar li form button{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.3s ease;
+    background-color: #773200;
+    border: 0;
+  }
+  #navbar li form button:hover{
+    color: #088178;
+    font-size: 17px;
+  }
+    </style>
+</head>
+<body>
+    <section id="header">
+                <img src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" alt="Outback Logo" title="Outback Logo"  style="width: 125px; height:60px;">
+
+
+        <div>
+            <ul id="navbar">
+                     
+				<li><a class="here" href="/">Home</a></li>
+				<li><a href="/views/cardapio">Cardápio</a></li>
+				<li><a href="/reserva">Reservas</a></li>
+                <li><form action="/logout" method="POST">
+        <button type="submit" id="signout">Sair da conta</button>
+    </form></li>
+
+            </ul>
+        </div>
+
+    </section>
+    
+    <main class="page" style="min-height: 100%;">
+        <section class="clean-block about-us">
+            
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col text-center">
+                    <h2 class="text-info">Minha Conta</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col-sm-6 col-lg-4" style="padding-right: 0px;padding-left: 0px;">
+                    <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg">
+                        <div class="card-body info">
+                            <div class="row" style="margin-top: -24px;">
+                                <div class="col-md-12" style="margin-top: 22px;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels"><strong>Usuario</strong></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels">{{username}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels"><strong>Senha</strong></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels">************</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

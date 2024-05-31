@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="icon" type="image/png" href="https://cdn.outback.com.br/wp-data/wp-content/themes/outback_2022/assets/images/outback-logo.png">
+    <link rel="stylesheet" href="/css/a_style.css">
+    <link rel="stylesheet" href="/css/about-last.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="/assets/bootstrap/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1.css">
+    <script src="/routes/routes.js"></script>
+    
+</head>
+<style>
+        @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+        body {
+            font-family: 'Spartan', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #2222221e;
+            padding: 1em 0;
+        }
+        #responsive{
+            display: none;
+        }
+        .everyback {
+            width: 100%;
+            height: 100%;
+            background-color: sienna;
+            padding: 2em;
+            box-sizing: border-box;
+        }
+
+        .reservation-container {
+            background-color: white;
+            padding: 2em;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .reservation-container h2 {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        #overlayContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #showOverlay {
+            background-color: #773200;
+            font-family: "Spartan", sans-serif;
+            border: 0;
+            color: #ffff;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 80px;
+            background: #773200;
+            box-shadow: 0 5% 15% rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 10%;
+        }
+
+        #navbar {
+            display: flex;
+            align-content: center;
+            justify-content: flex-end;
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        #navbar li a:hover {
+            color: #f27a25;
+            font-size: 17px;
+        }
+
+        #navbar li a.active {
+            color: white;
+            font-size: 17px;
+        }
+
+        #navbar li a.active::after {
+            content: "";
+            width: 30%;
+            height: 2px;
+            background: #f27a25;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            #header {
+                display: none;
+            }
+            .reservation-container {
+                margin-top: 16%;
+            }
+            #responsive {
+                display: block;
+            }
+
+        }
+
+        
+    </style>
+</head>
+<body>
+<!-- Esse abaixo é o autor de um dos elementos do bootstrap usado abaixo. Esse, em específico foi a navbar responsiva-->
+<!-----AUTHOR: Kris J. Baillargeon, KJRBWebDesign.com, kris@kjrbwebdesign.com, krisb1220@gmail.com
+<!-----DATE: 10/2/17
+<!-----INCLUDED FILES: Vertical Nav widget, Vertical-Nav.CSS, Vertical-Nav.js -->
+ 
+<section id="header">
+        <img src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" alt="Outback Logo" title="Outback Logo"  style="width: 125px; height:60px;">
+
+        <div>
+            <ul id="navbar">
+                        
+				<li><a class="here" href="/">Home</a></li>
+				<li><a href="/views/cardapio">Cardápio</a></li>
+				
+				<li><a href="/views/about">Sobre nós</a></li>
+                <li><button onclick="showreservations()" id="showOverlay">Minhas reservas</button></li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+    
+    <div id="overlayContainer"></div>
+    <div class="everyback">
+        <div id="responsive">
+<a id="nav-toggle" title="Toggle Navigation" onclick="toggleNav()"> <i class="toggle-bar fa fa-bars"></i></a> <!--Toggle Button-->
+
+<div id="sidebar" class="">
+    
+    <ul>
+        <img src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" alt="Outback Logo" title="Outback Logo" / style="width: 125px; height:60px;">
+        <li><a class="here" href="/">Home</a></li>
+        <li><a href="/views/cardapio">Cardápio</a></li>
+        <li><a href="/reserva">Reservas</a></li>
+        <li><a href="/views/about">Sobre nós</a></li>
+        
+        
+        <div class="contact-info">
+            <p>Unama, Alcindo Cacela, Bélem</p>
+            
+        </div>
+        <p class="text-center social-links">
+            <a href="https://www.facebook.com/outbackbrasil/"><i class="fa fa-facebook" ></i></a>
+            <a href="https://www.instagram.com/outbackbrasil/"><i class="fa fa-instagram"></i></a>
+            <a href="https://x.com/OutbackBrasil"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/outbackbrasil/"><i class="fa fa-linkedin"></i></p></a>
+    </ul>
+</div>
+</div>
+        <div class="reservation-container">
+            <h2>Reserve sua mesa!</h2>
+            <form action="/reservar" method="post" class="reserv">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data">
+                <label>Mesa com quantas cadeiras?</label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck4" name="qtd" value="8">
+                    <label class="form-check-label" for="flexSwitchCheck4">Mesa para 8 pessoas</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck6" name="qtd" value="4">
+                    <label class="form-check-label" for="flexSwitchCheck6">Mesa para 4 pessoas</label>
+                </div>
+                <input type="submit" value="Reservar">
+            </form>
+        </div>
+    </div>
+    <script src="/assets/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.js"></script>
+    <script>
+    const showreservations = require('/routes/routes.js');
+    </script>
+</body>
+</html>

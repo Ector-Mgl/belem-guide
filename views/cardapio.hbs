@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos de Interesse</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/css/i_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="/assets/bootstrap/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1.css">
+    <script src="/assets/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.js"></script>
+    <style>
+        h2{
+            color: white;
+        }
+        #responsive{
+            display: none;
+        }
+        @media (max-width: 768px) {
+            #header {
+                display: none;
+            }
+            #responsive {
+                display: block;
+                margin-top: 15px;
+                margin-left: 20px;
+            }
+            #welcome-message{
+                margin-top: 10%;
+            }
+            
+        }
+        
+        .logo{
+            width: 80px;
+            height: 80px;
+            }
+            #viewCart{
+                background-color: #773200;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                color: #fff;
+                transition: 0.3s ease;
+                background-color: #773200;
+                border: 0;
+            }
+        
+    </style>
+</head>
+<body>
+        <section id="header">
+        <a href="#"><img class="logo" src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" ></a>
+        <div >
+            <ul id="navbar">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/views/interest">Cardápio</a></li>
+                <li><a href="/reserva">Reservas</a></li>
+                <li><form action="/deliver" method="post"><button type="submit" id="fazerPedido">Fazer Pedido</button></form></li>
+                <li> 
+                                                                <button id="viewCart"><svg xmlns="http://www.w3.org/2000/svg"  width="30" height="30" fill="#ffffff" class="bi bi-cart-dash svg-white" viewBox="0 0 16 16">
+                                            <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
+                                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg></button>
+                </li>
+                
+            </ul>
+        </div>
+    </section>
+    <div id="responsive">
+<a id="nav-toggle" title="Toggle Navigation" onclick="toggleNav()"> <i class="toggle-bar fa fa-bars"></i></a> <!--Toggle Button-->
+
+<div id="sidebar" class="">
+    
+    <ul>
+        <img src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" alt="Outback Logo" title="Outback Logo" / style="width: 125px; height:60px;">
+        <li><a class="here" href="/">Home</a></li>
+        <li><a href="/views/cardapio">Cardápio</a></li>
+        <li><a href="/reserva">Reservas</a></li>
+        <li><a href="/views/about">Sobre nós</a></li>
+        
+        
+        <div class="contact-info">
+            <p>Unama, Alcindo Cacela, Bélem</p>
+            
+        </div>
+        <p class="text-center social-links">
+            <a href="https://www.facebook.com/outbackbrasil/"><i class="fa fa-facebook" ></i></a>
+            <a href="https://www.instagram.com/outbackbrasil/"><i class="fa fa-instagram"></i></a>
+            <a href="https://x.com/OutbackBrasil"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/outbackbrasil/"><i class="fa fa-linkedin"></i></p></a>
+    </ul>
+</div>
+</div>
+<div id="ContainerPedido"></div>
+    <section id="content">
+        <section id="product1" class="section-p1">
+            <h2>Burgers</h2>
+            <p></p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="/assets/cheddarburguer.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">Cheddar</h4><br>
+                        <h7>Pão Australiano, Maionese da Casa, Hambúrguer, Cheddar, Cebola caramelizada e Bacon crocante.
+                        </h7><br>
+                        <br>.<h7>40,00R$</h7><br><br>
+                        <h7></h7>
+
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/catupiry-com-bacon_94221992f9de5bfeb53cc0b2224a9bf8__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">CATUPIRY COM BACON</h4><br>
+                        <h7>Pão da Casa, Molho de Tomate Le Pinguê, Hambúrguer, Catupiry e Bacon crocante.
+                        </h7><br>
+                        <br><h7>35,00R$</h7><br><br>
+                        <h7></h7> 
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/smash-bacon_47bf01557d99c817c69b82e959549ecb__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">SMASH BACON</h4><br>
+                        <h7>Pão Especial, Maionese da Casa, Hambúrguer prensado, Queijo Cheddar e Bacon em tiras.
+                        </h7><br>
+                        <br><h7>25,00R$</h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/duplo-bacon_ca3908e0d94d46afac3781d82ce01f0a__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">DUPLO BACON</h4><br>
+                        <h7> Pão da Casa, Molho de Queijo, dois Hambúrgueres, Queijo Prato, Ketchup Le Pinguê e Bacon em tiras.
+                        </h7><br>
+                        <br><h7>40,00R$</h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                
+               
+
+        <section id="product1" class="section-p1">
+            <h2> Bebidas</h2>
+            <p></p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="/assets/agua-com-e-sem-gas_19b3d1073e4ebc83e6392331f4d11565__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">ÁGUA COM E SEM GÁS</h4><br>
+                        <h7>Com gás ou sem gás? Refresque-se com sua água favorita.</h7><br><br>
+                        <h7>5,00R$</h7><br><br>
+                        <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/refrigerantes_99df518e5874b138c89fb300feeb24f4__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">REFRIGERANTES</h4><br>
+                        <h7>Naquelas horas que bate uma vontade de beber um refrigerante geladinho, não adianta tentar: é impossível resistir!
+                        </h7><br>
+                        <br><h7>7,00R$</h7><br>
+                            <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/sucos-del-valle-e-integral_01fdf14256c6158c536ca3930fa4bc4e__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4"> SUCO INTEGRAL</h4><br>
+                        <h7>Sucos Del Valle e Prat's refrescante em qualquer hora. </h7><br>
+                        <br><h7>7,00R$</h7><br>
+                            <h7></h7>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/heineken-e-sol-long-neck_3ab2618f60115038c3a86b179fa77cc3__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">LONG NECK</h4><br>
+                        <h7>  Long Neck estupidamente gelada, acompanhamento perfeito para sua porção.
+                        </h7><br>
+                        <br><h7>15,00R$</h7><br>
+                        <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>Entradas</h2>
+            <p></p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="/assets/aneis-de-cebola_b0f12dba730bce1241701293db481579__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">ANÉIS DE CEBOLA</h4><br>
+                        <h7>Cortadas em forma de anéis, empanadas com uma leve camada de farinha de rosca já temperada. Acompanha Maionese de Pimenta.
+                        </h7><br>
+                        <br><h7>20,00R$</h7><br>
+                        <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/batata-rustica-_ed89a72c795ff7af54774a4a8c60a6eb__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">BATATA RÚSTICA</h4><br>
+                        <h7>Acompanhamento perfeito, traz um sabor único além de ser muito gostosa e cremosa por dentro. Acompanha Maionese da Casa.</h7><br>
+                        <br><h7>20,00R$</h7><br>
+                        <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/fritas-com-molho-de-queijo-e-bacon_f59e9618a1c56ac713a77049927642c7__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">FRITAS COM MOLHO DE QUEIJO E BACON</h4><br>
+                        <h7>Aquela batatinha irresistível que você já conhece, coberta com molho de queijo cremoso e pedacinhos de bacon.</h7><br>
+                        <br><h7>25,00R$</h7><br>
+                        <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+                <div class="pro">
+                    <img src="/assets/palitos-de-mucarela_7587787b1577a8699d34843005605ea3__800x600__0x0.jpg" alt="">
+                    <div class="des">
+                        <h4 id="myh4">PALITOS DE MUÇARELA</h4><br>
+                        <h7>Aqueles Palitos de Muçarela crocantes, temperados e deliciosos que você respeita! Acompanha Maionese de Pimenta.
+                        </h7><br>
+                        <br><h7>25,00R$</h7><br>
+                        <h7></h7><br><br>
+                        <h7></h7>
+                    </div>
+                </div>
+    </section>
+    
+        <div id="info-container">
+        </div>
+            
+        <div id="map">
+            <div id="container-map"></div>
+        </div>
+    </section>
+    <script>
+
+        const listItens= []
+         document.addEventListener('DOMContentLoaded', () => {
+            const selectedItems = [];
+            const proElements = document.querySelectorAll('.pro');
+            
+            proElements.forEach(pro => {
+                pro.addEventListener('click', () => {
+                    const itemName = pro.querySelector('h4').innerText;
+                    selectedItems.push(itemName);
+                    listItens.push({"nome": itemName})
+                    alert(itemName + " foi adicionado ao carrinho!");
+                });
+            });
+
+            document.getElementById('viewCart').addEventListener('click', () => {
+                if (selectedItems.length > 0){
+                let cartContent = "Itens no carrinho:\n";
+                selectedItems.forEach(item => {
+                    cartContent += "- " + item + "\n";
+                });
+                alert(cartContent);
+                } else {
+                    alert("Você não tem itens no carrinho")}
+            });
+        });
+        
+
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+
+
+        </script>  
+       
+</body>
+</html>

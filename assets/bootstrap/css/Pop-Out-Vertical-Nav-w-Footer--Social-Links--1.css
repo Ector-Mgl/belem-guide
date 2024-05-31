@@ -1,0 +1,121 @@
+a {
+  color: white;
+}
+
+.fa.fa-facebook:hover {
+  color: #3b5998;
+}
+
+.fa.fa-twitter:hover {
+  color: #55acee;
+}
+
+.fa.fa-instagram:hover {
+  color: #4c68d7;
+}
+
+.fa.fa-facebook:hover {
+  color: #3b5998;
+}
+
+.fa.fa-twitter:hover {
+  color: #55acee;
+}
+
+.fa.fa-instagram:hover {
+  color: #4c68d7;
+}
+
+#sidebar li {
+  list-style-type: none;
+  padding-top: 10px;
+  color: rgba(255,255,255,0.22);
+  border-bottom-style: solid;
+  padding: 10px 10px 10px 0px;
+}
+
+#sidebar {
+  position: fixed;
+  right: -500px;
+  
+  width: 35vh;
+  /*text-align: center;*/
+  z-index: 10000;
+  font-size: 14pt;
+  font-family: 'Ubuntu';
+  transition: all 400ms linear;
+  -webkit-transition: all 400ms linear;
+  -moz-transition: all 400ms linear;
+  -o-transition: all 400ms linear;
+  padding-top: 0px !important;
+}
+
+#sidebar.active {
+  right: 0px;
+  height: 100%;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+#sidebar a {
+  color: white;
+}
+
+.here {
+  font-size: 18pt;
+}
+
+.social-links {
+  letter-spacing: 15px;
+  padding-top: 15%;
+  color: white;
+}
+
+.contact-info {
+  padding-top: 20%;
+  color: #fff !important;
+}
+
+#nav-toggle {
+  font-size: 20pt;
+  padding: 10px;
+  margin-top: 100px;
+  
+  height: 64px;
+  width: 64px;
+  margin-bottom: 30px;
+  text-align: center;
+  
+  transition: all 400ms linear;
+  -webkit-transition: all 400ms linear;
+  -moz-transition: all 400ms linear;
+  -o-transition: all 400ms linear;
+  right: 10px;
+  border-color: #ffffff;
+  border-width: 1.5px;
+  border-style: solid;
+  color: #ffffff;
+  z-index: 99999999;
+}
+
+#nav-toggle:hover {
+  border-color: #773200;
+  color: #773200;
+}
+

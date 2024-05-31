@@ -1,0 +1,104 @@
+#sidebar li {
+  list-style-type: none;
+  padding-top: 10px;
+  color: rgba(255,255,255,0.22);
+  border-bottom-style: solid;
+  padding: 10px 10px 10px 0px;
+}
+
+#sidebar {
+  margin-top: -70px;
+  position: fixed;
+  right: -500px;
+  background: #773200;
+  width: 35vh;
+  /*text-align: center;*/
+  z-index: 10000;
+  font-size: 14pt;
+  font-family: 'Ubuntu';
+  transition: all 400ms linear;
+  -webkit-transition: all 400ms linear;
+  -moz-transition: all 400ms linear;
+  -o-transition: all 400ms linear;
+  padding-top: 0px !important;
+}
+
+#sidebar.active {
+  right: 0px;
+  height: 100%;
+}
+
+#sidebar ul {
+  padding-top: 10%;
+  
+}
+#sidebar ul img {
+  margin-left: 20%;
+  
+}
+a {
+  text-decoration: none;
+}
+
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+#sidebar a {
+  
+}
+
+.here {
+  font-size: 18pt;
+}
+
+.social-links {
+  letter-spacing: 15px;
+  padding-top: 15%;
+  color: white;
+}
+
+.contact-info {
+  padding-top: 20%;
+  color: #fff !important;
+}
+
+#page-down {
+  font-size: 20pt;
+  position: fixed;
+  margin: 30px;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+  border-style: solid;
+  line-height: 64px;
+  transition: all 400ms linear;
+  -moz-transition: all 400ms linear;
+  -webkit-transition: all 400ms linear;
+  -o-transition: all 400ms linear;
+  right: 10px;
+  bottom: 0;
+}
+
+
+
+#nav-toggle.active {
+  right: 225px;
+  transform: rotateZ(180deg);
+  -moz-transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+  -o-transform: scale(1.05) rotateZ(180deg);
+  border-color: whitesmoke;
+  color:whitesmoke;
+}
+

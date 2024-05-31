@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outback</title>
+    <link rel="icon" type="image/png" href="https://cdn.outback.com.br/wp-data/wp-content/themes/outback_2022/assets/images/outback-logo.png">
+    <link rel="stylesheet" href="/css/h_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="/assets/bootstrap/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1.css">
+    <script src="/assets/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.js"></script>
+<style>
+    
+        @media (max-width: 768px) {
+            #header {
+                display: none;
+            }
+            section #responsive {
+                display: block;
+            }
+            #welcome-message{
+                margin-top: 10%;
+            }
+            #nav-toggle {
+                margin-left: -52px;
+                margin-top: -140px;
+            }
+            #changeColor{
+                color: #ffffff;
+                font-weight: bolder;
+                background-color: rgba(0, 0, 0, 0.514);
+                border-radius: 6%;
+            }
+        }
+
+    h4{
+        color: #ffffff;
+    }
+    #responsive {
+                display: none;
+            }
+    #navbar li form button{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s ease;
+    background-color: #773200;
+    border: 0;
+    cursor: pointer;
+  }
+  .logo{
+    width: 125px;
+    height: 125px;
+  }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"><img class="logo" src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" ></a>
+        <div >
+            <ul id="navbar">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/views/cardapio">Cardápio</a></li>
+                <li><a href="/reserva">Reservas</a></li>
+                <li><a href="/views/about">Sobre nós</a></li>
+                <li>{{#if tkn}}
+                    <form action="/logout" method="POST">
+                    <button type="submit" >Sair</button>
+                     </form>
+                {{else}}
+                    <a href="/views/login" id="signin">Login<i class="bi bi-person-fill"></i></a>
+                 
+                {{/if}}</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hero">
+    <div id="responsive">
+<a id="nav-toggle" title="Toggle Navigation" onclick="toggleNav()"> <i class="toggle-bar fa fa-bars"></i></a> <!--Toggle Button-->
+
+<div id="sidebar" class="">
+    
+    <ul>
+        <img src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" alt="Outback Logo" title="Outback Logo" / style="width: 125px; height:60px;">
+        <li><a class="here" href="/">Home</a></li>
+        <li><a href="/views/cardapio">Cardápio</a></li>
+        <li><a href="/reserva">Reservas</a></li>
+        <li><a href="/views/about">Sobre nós</a></li>
+        
+        
+        <div class="contact-info">
+            <p>Unama, Alcindo Cacela, Bélem</p>
+            
+        </div>
+        <p class="text-center social-links">
+            <a href="https://www.facebook.com/outbackbrasil/"><i class="fa fa-facebook" ></i></a>
+            <a href="https://www.instagram.com/outbackbrasil/"><i class="fa fa-instagram"></i></a>
+            <a href="https://x.com/OutbackBrasil"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/outbackbrasil/"><i class="fa fa-linkedin"></i></p></a>
+    </ul>
+</div>
+</div>
+        <section id="welcome-message">
+        <h1>Bem-vindo!</h1>
+        <p>Aqui, cada refeição é uma experiência inesquecível.</p>
+        <p></p>Descubra o prazer de comer bem!</p>
+    </section>
+        <a href="/views/cardapio"><button>Cadárpio</button></a>
+    </section>
+    
+    <section class="history">
+        <div class="history-content">
+            <div class="history-text">
+                     <h2 id="moveColor">Nossa História</h2>
+                     <p id="changeColor">Bem-vindo ao Outback! Somos um grupo de estudantes apaixonados por culinária que decidiu trazer o sabor autêntico da Austrália para nossa comunidade acadêmica.  </p>
+                </div>
+                <div class="history-image">
+                <img src="/css/24.png" alt="Nossa História">
+            </div>
+        </div>
+    </section>    
+
+    <section class="additional-content">
+    <div class="background-image">
+        <div class="overlay"></div>
+    </div>
+    <div class="content-overlay">
+        <div class="opening-hours">
+            <h2>Horários de Funcionamento</h2>
+            <div class="hours">
+                <div class="day">
+                    <p>Segunda a Sexta:</p>
+                    <p>9:00 - 22:00</p>
+                </div>
+                <div class="day">
+                    <p>Sábado a Domingo:</p>
+                    <p>11:00 - 22:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="elfsight-app-c1b699b9-6a6b-4bbe-b2f0-83c50f6bcd62" data-elfsight-app-lazy></div>
+    <footer class="section-p1">
+
+        <div class="col">
+            
+            
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/outbackbrasil/"><i class="fa fa-facebook" ></i></a>
+                    <a href="https://www.instagram.com/outbackbrasil/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://x.com/OutbackBrasil"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/outbackbrasil/"><i class="fa fa-linkedin"></i></p></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Police</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Account</h4>
+            <a href="login.html"> Sign In</a>
+            <a href="t_points.html">View tourists points</a>
+            <a href="i_points.html">View interesting points</a>
+            <a href="#">Help</a>
+        </div>
+            <div class="copyright">
+                <p style="color: #ffffff;">@ 2024, Belem-Guide</p>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="app.js"></script>
+     <script src="/js/geral_signout.js"></script>
+</body>
+</html>

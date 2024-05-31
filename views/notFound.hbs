@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outback - Não encontrado</title>
+    <link rel="icon" type="image/png" href="https://cdn.outback.com.br/wp-data/wp-content/themes/outback_2022/assets/images/outback-logo.png">
+    <style>
+body {
+    background-image: url('/assets/notFound.png');
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #cfd3df;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 50px;
+}
+
+#navbar{
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+#navbar li{
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.active{
+    color: #088178;
+    font-size: 17px;
+  }
+  
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+  }
+  h1, h2{
+    color: white;
+    text-align: center;
+  }
+  #header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #773200;
+  box-shadow: 0 5% 15% rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 10%;
+}
+
+#navbar{
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position:relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover {
+  color: #f27a25;
+  font-size: 17px;
+}
+
+#navbar li a.active {
+  color: white;
+  font-size: 17px;
+}
+
+#navbar li a.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #f27a25;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+    </style>
+</head>
+<body>
+    <section id="header">
+        <img src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" alt="Outback Logo" title="Outback Logo"  style="width: 125px; height:60px;">
+
+        <div>
+            <ul id="navbar">
+                     
+				<li><a class="here" href="/">Home</a></li>
+				<li><a href="/views/cardapio">Cardápio</a></li>
+				<li><a href="/reserva">Reservas</a></li>
+				<li><a href="/views/about">Sobre nós</a></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <h1>Parece que a página que você digitou não existe
+    </h1>
+    <h2>Verique a URL e tente novamente!</h2>
+</body>
+</html>

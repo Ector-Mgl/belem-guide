@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belém Guide</title>
+    <link rel="icon" type="image/png" href="https://cdn.outback.com.br/wp-data/wp-content/themes/outback_2022/assets/images/outback-logo.png">
+    <link rel="stylesheet" href="/css/h_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="/assets/bootstrap/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1.css">
+    <script src="/assets/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.js"></script>
+<style>
+    
+        @media (max-width: 768px) {
+            #header {
+                display: none;
+            }
+            section #responsive {
+                display: block;
+            }
+            #welcome-message{
+                margin-top: 10%;
+            }
+            #nav-toggle {
+                margin-left: -52px;
+                margin-top: -140px;
+            }
+            #changeColor{
+                color: #ffffff;
+                font-weight: bolder;
+                background-color: rgba(0, 0, 0, 0.514);
+                border-radius: 6%;
+            }
+        }
+
+    h4{
+        color: #ffffff;
+    }
+    #responsive {
+                display: none;
+            }
+    #navbar li form button{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s ease;
+    background-color: #773200;
+    border: 0;
+    cursor: pointer;
+  }
+  .logo{
+    width: 125px;
+    height: 125px;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+        body {
+            font-family: 'Spartan', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #2222221e;
+            padding: 1em 0;
+        }
+        #responsive{
+            display: none;
+        }
+        .everyback {
+            width: 100%;
+            height: 100%;
+            background-color: sienna;
+            padding: 2em;
+            box-sizing: border-box;
+        }
+
+        .reservation-container {
+            background-color: sienna;
+            padding: 2em;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .reservation-container h2 {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        #overlayContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #showOverlay {
+            background-color: #773200;
+            font-family: "Spartan", sans-serif;
+            border: 0;
+            color: #ffff;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 80px;
+            background: #773200;
+            box-shadow: 0 5% 15% rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 10%;
+        }
+
+        #navbar {
+            display: flex;
+            align-content: center;
+            justify-content: flex-end;
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        #navbar li a:hover {
+            color: #f27a25;
+            font-size: 17px;
+        }
+
+        #navbar li a.active {
+            color: white;
+            font-size: 17px;
+        }
+
+        #navbar li a.active::after {
+            content: "";
+            width: 30%;
+            height: 2px;
+            background: #f27a25;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"><img class="logo" src="https://cdn.worldvectorlogo.com/logos/outback-steakhouse-3.svg" ></a>
+        <div >
+            <ul id="navbar">
+                <li><a class="here" href="/">Home</a></li>
+                <li><a href="/views/cardapio">Cardápio</a></li>
+                <li><a href="/reserva">Reservas</a></li>
+                <li><a href="/views/about">Sobre nós</a></li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+        <div class="reservation-container">
+            
+            <h2>Seu Pedido já está sendo preparado! </h1>
+            <h3> Vá até o restaurante para pegar o seu pedido dentro de 40 minutos!       </h2>
+           
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="section-p1">
+
+        <div class="col">
+            
+            
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/outbackbrasil/"><i class="fa fa-facebook" ></i></a>
+                    <a href="https://www.instagram.com/outbackbrasil/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://x.com/OutbackBrasil"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/outbackbrasil/"><i class="fa fa-linkedin"></i></p></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Police</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Account</h4>
+            <a href="login.html"> Sign In</a>
+            <a href="t_points.html">View tourists points</a>
+            <a href="i_points.html">View interesting points</a>
+            <a href="#">Help</a>
+        </div>
+            <div class="copyright">
+                <p style="color: #ffffff;">@ 2024, Belem-Guide</p>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="app.js"></script>
+     <script src="/js/geral_signout.js"></script>
+</body>
+</html>
