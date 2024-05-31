@@ -227,6 +227,13 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck6" name="qtd" value="4">
                     <label class="form-check-label" for="flexSwitchCheck6">Mesa para 4 pessoas</label>
                 </div>
+                {{#if message}}
+                {{#if success}}
+                <h4 class="alert alert-success mt-2">{{message}}</h4>
+                {{else}}
+                    <h4 class="alert alert-danger mt-2">{{message}}</h4>
+                {{/if}}
+                {{/if}}
                 <input type="submit" value="Reservar">
             </form>
         </div>
@@ -235,6 +242,22 @@
     <script src="/assets/bootstrap/js/Pop-Out-Vertical-Nav-w-Footer--Social-Links--1-Vertical-Nav.js"></script>
     <script>
     const showreservations = require('/routes/routes.js');
+    document.addEventListener("DOMContentLoaded", function() {
+            const switch4 = document.getElementById('flexSwitchCheck4');
+            const switch8 = document.getElementById('flexSwitchCheck8');
+
+            switch4.addEventListener('change', function() {
+                if (switch4.checked) {
+                    switch8.checked = false;
+                }
+            });
+
+            switch8.addEventListener('change', function() {
+                if (switch8.checked) {
+                    switch4.checked = false;
+                }
+            });
+        });
     </script>
 </body>
 </html>
